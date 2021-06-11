@@ -1,0 +1,10 @@
+init_config:
+    timeout: 10
+    service: codefun
+
+instances:
+  - name: Codefun status
+    url: http://codefun.vn
+    method: get
+    tls_verify: true
+    min_collection_interval: 5
