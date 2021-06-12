@@ -1,10 +1,10 @@
 init_config:
-    timeout: 10
-    service: codefun
+  timeout: 10
+  service: codefun
 
 instances:
-  - name: Codefun status
-    url: http://codefun.vn
+  - name: Codefun Judge ping
+    url: http://codefun.vn/api/judge/ping
     method: get
     tls_verify: true
     min_collection_interval: 5
