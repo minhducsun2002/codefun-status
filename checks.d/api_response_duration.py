@@ -13,4 +13,5 @@ class CheckValue(AgentCheck):
         event["Content"]["url"] != "/judge/ping" and event["Content"]["url"] != "/logs" and event["Content"]["url"] != "/judge/logs",
       json["data"]
     ))
-    self.gauge('codefun.api.duration', data[0]["Content"]["duration"])
+    for event in data:
+      self.histogram('codefun.api.duration', event["Content"]["duration"])
