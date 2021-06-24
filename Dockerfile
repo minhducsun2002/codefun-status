@@ -1,5 +1,8 @@
 FROM datadog/agent:7
 
+ARG API_KEY
+ENV DD_API_KEY=${API_KEY}
+
 COPY conf.d/http_check.d/site.yml /etc/datadog-agent/conf.d/http_check.d/site.yml
 
 COPY conf.d/api_response_duration.yml /etc/datadog-agent/conf.d/api_response_duration.yml
